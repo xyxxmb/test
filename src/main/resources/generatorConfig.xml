@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--UG: http://www.mybatis.org/generator/-->
+<generatorConfiguration>
+    <context id="MybatisLearn" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!--Child elements of context must follow the below order-->
+        <!--property*,plugin*,commentGenerator?,jdbcConnection,javaTypeResolver?,javaModelGenerator,sqlMapGenerator?,javaClientGenerator?,table+-->
+
+        <!--change delimiter for MySQL-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/SecondClass"
+                        userId="root" password="123456"/>
+
+        <!--data model, including entity and example class-->
+        <javaModelGenerator targetPackage="com.buptyouth.mybatis.model" targetProject="src/main/java"/>
+
+        <!--xml mapper files -->
+        <sqlMapGenerator targetPackage="com.buptyouth.mybatis.xmlmapper" targetProject="src/main/java"/>
+
+        <!--mapper java interface--><!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.buptyouth.mybatis.dao"
+                             targetProject="src/main/java"/>
+
+         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名--> 
+        <table tableName="user" domainObjectName="User">
+            <columnOverride column="user_id" property="userId"/>
+            <columnOverride column="password" property="password"/>
+            <columnOverride column="user_name" property="userName"/>
+            <columnOverride column="user_type" property="userType"/>
+            <columnOverride column="college" property="college"/>
+            <columnOverride column="department" property="department"/>
+        </table>
+
+        <table tableName="apply" domainObjectName="Apply">
+            <columnOverride column="apply_id" property="applyId"/>
+            <columnOverride column="user_id" property="userId"/>
+            <columnOverride column="user_type" property="userType"/>
+            <columnOverride column="applicant_type" property="applicantType"/>
+            <columnOverride column="target_type" property="targetType"/>
+            <columnOverride column="target_id" property="targetId"/>
+            <columnOverride column="target_number" property="targetNumber"/>
+            <columnOverride column="start_time" property="startTime"/>
+            <columnOverride column="end_time" property="endTime"/>
+            <columnOverride column="create_time" property="createTime"/>
+            <columnOverride column="college" property="college"/>
+            <columnOverride column="department" property="department"/>
+            <columnOverride column="target_auditor" property="targetAuditor"/>
+            <columnOverride column="use_media" property="useMedia"/>
+            <columnOverride column="reason" property="reason"/>
+            <columnOverride column="state" property="state"/>
+            <columnOverride column="activity_name" property="activityName"/>
+            <columnOverride column="people_number" property="peopleNumber"/>
+        </table>
+
+        <table tableName="auditor" domainObjectName="Auditor">
+            <columnOverride column="auditor_id" property="auditorId"/>
+            <columnOverride column="auditor_name" property="auditorName"/>
+            <columnOverride column="auditor_type" property="auditorType"/>
+            <columnOverride column="college" property="college"/>
+            <columnOverride column="department" property="department"/>
+        </table>
+
+        <table tableName="device" domainObjectName="Device">
+            <columnOverride column="device_id" property="deviceId"/>
+            <columnOverride column="device_name" property="deviceName"/>
+            <columnOverride column="rest_number" property="restNumber"/>
+            <columnOverride column="total_number" property="totalNumber"/>
+        </table>
+
+        <table tableName="room" domainObjectName="Room">
+            <columnOverride column="room_id" property="roomId"/>
+            <columnOverride column="room_name" property="roomName"/>
+            <columnOverride column="audio" property="audio"/>
+            <columnOverride column="projector" property="projector"/>
+        </table>
+
+        <table tableName="schoolcalendar" domainObjectName="Schoolcalendar">
+            <columnOverride column="date" property="date"/>
+            <columnOverride column="state" property="state"/>
+        </table>
+
+        <table tableName="userwechat" domainObjectName="Userwechat">
+            <columnOverride column="user_id" property="userId"/>
+            <columnOverride column="open_id" property="openId"/>
+            <columnOverride column="code" property="code"/>
+            <columnOverride column="college" property="college"/>
+            <columnOverride column="department" property="department"/>
+        </table>
+
+
+        <table tableName="role" domainObjectName="Role">
+            <columnOverride column="role" property="role"/>
+            <columnOverride column="role_name" property="roleName"/>
+        </table>
+        <table tableName="userAccess" domainObjectName="UserAccess">
+            <columnOverride column="role" property="role"/>
+            <columnOverride column="access" property="access"/>
+        </table>
+        <table tableName="userRole" domainObjectName="UserRole">
+            <columnOverride column="user_id" property="userId"/>
+            <columnOverride column="role" property="role"/>
+            <columnOverride column="college" property="college"/>
+            <columnOverride column="department" property="department"/>
+        </table>
+
+
+
+
+
+    </context>
+    <context id="MybatisLearn2" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!--Child elements of context must follow the below order-->
+        <!--property*,plugin*,commentGenerator?,jdbcConnection,javaTypeResolver?,javaModelGenerator,sqlMapGenerator?,javaClientGenerator?,table+-->
+
+        <!--change delimiter for MySQL-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.3.240.153:3306/sc_bupt_integration"
+                        userId="bupt666sc" password="BUPTSC666"/>
+
+        <!--data model, including entity and example class-->
+        <javaModelGenerator targetPackage="com.buptyouth.mybatis.model" targetProject="src/main/java"/>
+
+        <!--xml mapper files -->
+        <sqlMapGenerator targetPackage="com.buptyouth.mybatis.xmlmapper" targetProject="src/main/java"/>
+
+        <!--mapper java interface--><!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.buptyouth.mybatis.dao"
+                             targetProject="src/main/java"/>
+
+        <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
+
+        <table tableName="T_BZKS" domainObjectName="Undergraduate">
+            <columnOverride column="XH" property="schoolNumber"/>
+            <columnOverride column="XM" property="userName"/>
+            <columnOverride column="XBDM" property="gender"/>
+            <columnOverride column="XZNJ" property="grade"/>
+            <columnOverride column="YXDM" property="collegeCode"/>
+            <columnOverride column="ZCQK" property="registerInfo"/>
+        </table>
+        <table tableName="T_YJS" domainObjectName="Master">
+            <columnOverride column="XH" property="schoolNumber"/>
+            <columnOverride column="XM" property="userName"/>
+            <columnOverride column="XBDM" property="gender"/>
+            <columnOverride column="XZNJ" property="grade"/>
+            <columnOverride column="YXDM" property="collegeCode"/>
+            <columnOverride column="ZCQK" property="registerInfo"/>
+        </table>
+        <table tableName="T_JZG" domainObjectName="Staff">
+            <columnOverride column="ZGH" property="staffNumber"/>
+            <columnOverride column="XM" property="staffName"/>
+            <columnOverride column="XBDM" property="gender"/>
+            <columnOverride column="XWDM" property="degree"/>
+            <columnOverride column="JZGLBDM" property="classCode"/>
+            <columnOverride column="SJLY" property="dataResource"/>
+        </table>
+        <table tableName="T_DW" domainObjectName="DWinfo">
+            <columnOverride column="DWDM" property="dwNumber"/>
+            <columnOverride column="BBM" property="banbieCode"/>
+            <columnOverride column="LBM" property="leibieCode"/>
+            <columnOverride column="JLNY" property="buildTime"/>
+            <columnOverride column="ZYDZ" property="homepage"/>
+            <columnOverride column="DWMC" property="dwName"/>
+        </table>
+        <table tableName="T_BZKS_KSCJ" domainObjectName="BZscore">
+            <columnOverride column="XH" property="schoolNumber"/>
+            <columnOverride column="XN" property="schoolYear"/>
+            <columnOverride column="XQDM" property="semester"/>
+            <columnOverride column="KCDM" property="course"/>
+            <columnOverride column="KSCS" property="testTimes"/>
+            <columnOverride column="BFZKSCJ" property="score"/>
+            <columnOverride column="SFTG" property="passInfo"/>
+            <columnOverride column="XF" property="credits"/>
+            <columnOverride column="JD" property="gradePoint"/>
+            <columnOverride column="PSCJ" property="pingshiScore"/>
+            <columnOverride column="KSXSDM" property="kaoshiWay"/>
+            <columnOverride column="KCCJ" property="kechengScore"/>
+            <columnOverride column="RKJSGH" property="renkeTeacher"/>
+        </table>
+        <table tableName="T_YJS_KSCJ" domainObjectName="YJSscore">
+            <columnOverride column="XH" property="schoolNumber"/>
+            <columnOverride column="XN" property="schoolYear"/>
+            <columnOverride column="XQDM" property="semester"/>
+            <columnOverride column="KCDM" property="course"/>
+            <columnOverride column="KSCS" property="testTimes"/>
+            <columnOverride column="BFZKSCJ" property="score"/>
+            <columnOverride column="SFTG" property="passInfo"/>
+            <columnOverride column="XF" property="credits"/>
+            <columnOverride column="JD" property="gradePoint"/>
+            <columnOverride column="PSCJ" property="pingshiScore"/>
+            <columnOverride column="KSXSDM" property="kaoshiWay"/>
+            <columnOverride column="KCCJ" property="kechengScore"/>
+            <columnOverride column="RKJSGH" property="renkeTeacher"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
